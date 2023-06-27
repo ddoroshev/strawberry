@@ -67,6 +67,8 @@ def test_lazy_forward_reference():
     type A {
       id: ID!
       b: B!
+      bList: [B!]!
+      cList: [C!]!
       optionalB: B
       optionalB2: B
     }
@@ -74,8 +76,13 @@ def test_lazy_forward_reference():
     type B {
       id: ID!
       a: A!
+      aList: [A!]!
       optionalA: A
       optionalA2: A
+    }
+
+    type C {
+      id: ID!
     }
 
     type Query {
